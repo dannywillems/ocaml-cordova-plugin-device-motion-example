@@ -1,6 +1,5 @@
 let device_ready _ =
-  let accelerometer : Accelerometer.accelerometer Js.t = Js.Unsafe.js_expr
-  ("navigator.accelerometer") in
+  let accelerometer = Accelerometer.accelerometer () in
 
   let succ : Accelerometer.cb_success =
     fun a ->

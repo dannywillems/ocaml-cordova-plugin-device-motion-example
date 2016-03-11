@@ -31,3 +31,5 @@ let create_options freq =
   object%js
     val frequency = freq
   end
+
+let accelerometer () : accelerometer Js.t = Js.Unsafe.js_expr ("navigator.accelerometer")
