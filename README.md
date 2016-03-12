@@ -160,5 +160,5 @@ The Makefile allows you to keep old built archive.
   byte files.
 * clean_css: remove generated css files.
 
-* init_plugins: initialize plugins you need. Contains cordova-plugin-device
-  for this project.
+* init_plugins: initialize plugins you need. Contains
+  cordova-plugin-device-motion for this project.
