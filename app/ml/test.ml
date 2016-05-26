@@ -1,4 +1,4 @@
-let device_ready _ =
+let on_device_ready _ =
   let accelerometer = Cordova_accelerometer.t () in
 
   let succ =
@@ -11,13 +11,11 @@ let device_ready _ =
   in
 
   let err =
-    fun () -> Dom_html.window##(alert (Js.string "Error with accelerometer")) in
+    fun () -> Jsoo_lib.alert "Error with accelerometer"
+  in
 
   let id = accelerometer#watch_acceleration succ err
   (Cordova_accelerometer.create_options ()) in
-  Js._false
+  ()
 
-let _ =
-  Dom.addEventListener Dom_html.document (Dom.Event.make "deviceready")
-  (Dom_html.handler device_ready) Js._false
-  (*Dom_html.window##.onload := Dom_html.handler onload*)
+let _ = Cordova.Event.device_ready on_device_ready
